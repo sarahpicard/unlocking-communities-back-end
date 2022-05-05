@@ -5,8 +5,9 @@ const inventorySchema = new mongoose.Schema({
   waterNum: { type: String }, 
   stoveNum: { type: String },
   userId: { type: mongoose.Schema.Types.ObjectId, ref: "Profile"}, 
-  waterInTransit: { type: String },
-  stoveInTransit: { type: String},
+  waterToOrder: { type: String },
+  stoveToOrder: { type: String},
+  subtractStove: { type: String },
 }, {
   timestamps: true
 })
