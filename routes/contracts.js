@@ -6,6 +6,6 @@ const router = Router()
 
 
 router.post('/', contractsCtrl.create)
-router.get('/all', contractsCtrl.index)
+router.get('/', contractsCtrl.index)
 
 export { router }

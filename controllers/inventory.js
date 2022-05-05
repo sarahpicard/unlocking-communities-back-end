@@ -1,4 +1,4 @@
-import { Inventory } from "../models/inventory";
+import { Inventory } from "../models/inventory.js";
 
 function create(req, res) {
   req.body.owner = req.user.profile._id
