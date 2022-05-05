@@ -8,6 +8,6 @@ const inventorySchema = new mongoose.Schema({
   timestamps: true
 })
 
-const Inventory = mongoose.model('Profile', inventorySchema)
+const Inventory = mongoose.model('Inventory', inventorySchema)
 
 export { Inventory }

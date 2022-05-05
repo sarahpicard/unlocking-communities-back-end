@@ -1,11 +1,18 @@
-import { Contract } from "../models/contract";
+import { Contract } from "../models/contract.js"
 
 function create(req, res) {
-  req.body.owner = req.user.profile._id
-  Contract.create(req.body, function(err, todo) {
-    res.redirect('/contracts/new')
-  })
+  console.log(req.body)
+  Contract.create(req.body)
+  .then(contract => res.json(contract))
+  .catch(err => res.json(err))
 }
+// function create(req, res) {
+//   console.log('req.body', req.body)
+//   // req.body.owner = req.user.profile._id
+//   Contract.create(req.body, function(err, todo) {
+//     res.redirect('/contracts')
+//   })
+// }
 
 function index(req, res) {
   Contract.find({})

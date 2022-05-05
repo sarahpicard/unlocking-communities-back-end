@@ -22,6 +22,6 @@ const contractSchema = new mongoose.Schema({
   timestamps: true
 })
 
-const Contract = mongoose.model('Profile', contractSchema)
+const Contract = mongoose.model('Contract', contractSchema)
 
 export { Contract }
