@@ -1,11 +1,16 @@
 import { Inventory } from "../models/inventory.js";
 
 function create(req, res) {
-  req.body.owner = req.user.profile._id
-  Inventory.create(req.body, function(err, todo) {
-    res.redirect('/inventory')
-  })
+  Inventory.create(req.body)
+  .then(item => res.json(item))
+  .catch(err => res.json(err))
 }
+// function create(req, res) {
+//   req.body.owner = req.user.profile._id
+//   Inventory.create(req.body, function(err, todo) {
+//     res.redirect('/inventory')
+//   })
+// }
 
 function index(req, res) {
   Inventory.find({})
